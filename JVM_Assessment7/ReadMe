@@ -1,0 +1,123 @@
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+To solve this assignment, I have made a project named JVM_Assessment7. In that I have done all the tasks mentioned in the exercise.
+Here I have made a text file where i am explaining what I have done to solve those questions.
+In the code, I have added the comments, where they are specifying which solution is for which question
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 1 : Add a maven dependency and its related repository URL.
+
+Solution 1 : For this i have added a dependency whose artifactId is protocol-core.
+		Its code is :
+  			<dependency>
+            			<groupId>software.amazon.awssdk</groupId>
+            			<artifactId>protocol-core</artifactId>
+            			<version>2.17.288</version>
+        		</dependency>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 2 : Add a new repository in the pom.xml and use its dependencies.
+
+Solution 2 : For this I have added a repository named "jboss-repo" using following code :
+		<repositories>
+        		<repository>
+            			<id>jboss-repo</id>
+            			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+        		</repository>
+    		</repositories>
+    		
+    		And to add the dependency whose artifact id is "jboss-logging", i have added following code :
+    		<dependency>
+            		<groupId>org.jboss.logging</groupId>
+            		<artifactId>jboss-logging</artifactId>
+            		<version>3.4.3.Final</version>
+        	</dependency>
+        	
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 3 : Using JAR plugin, make changes in the pom.xml to make the jar executable. Using java -jar JAR_NAME, the output should be printed as "Hello World"
+
+Solution 3 :
+
+Used the following code to make the jar executable and <mainClass></mainClass> is where I have specified which file's main method i want to use :
+
+     <build>
+        <plugins>
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>org.example.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+Then I run the Lifecycle "package" to create the jar file named "JVM_Assessment7-1.0-SNAPSHOT.jar". After that I run the command "java -jar JVM_Assessment7-1.0-SNAPSHOT.jar", it will output "Hello world".
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 4 : Differentiate between the different dependency scopes: compile, runtime, test, provided using different dependencies being defined in your pom.xml.
+
+Solution 4 :
+
+Compile time scope : It is the default scope, when no scope is provided. Dependencies of this scope are available on the classpath of the project in all build tasks. These dependencies can also be transitive. 
+
+Run Time scope : Dependencies of this scope are required at run time, and not needed at compile time.
+
+Test scope : We use this scope for the dependencies which are only needed at the time of testing purposes. Test dependencies aren't transitive.
+
+
+For the solution, I have added the following code :
+
+	<!--Compile Time Dependency-->
+	<dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <!--Run Time Dependency-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--Question 4 : Test Dependency-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Question 5 : Create a multi-module project. Run package command at the top level to make jar of every module.
+
+Solution 5 : 
+I have created a parent module named "JVM_Assessment7". Under this, I have created three sub-modules named SubModule1, SubModule2 and SubModule3 respectively. In the pom file of the parent module, I have added "<packaging>pom</packaging>", by setting it as pom, it serves as the Parent module.While running the package command, it will create jar files for all three modules named SubModule1-1.0-SNAPSHOT.jar, SubModule2-1.0-SNAPSHOT.jar and SubModule3-1.0-SNAPSHOT.jar.
+
+Automatically the following code is inserted in the parent module's pom file :
+    <modules>
+        <module>SubModule1</module>
+        <module>SubModule2</module>
+        <module>SubModule3</module>
+    </modules>
+    
+
+------------------------------------------------------------------------------------------------------------------------------------------
