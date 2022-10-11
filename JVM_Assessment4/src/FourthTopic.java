@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FourthTopic {
     static class Employee{
@@ -37,6 +38,12 @@ public class FourthTopic {
         /*** filter() method will select employees which have salary less than 5000 and live in Delhi ***/
         /*** map() method will split the full name of employee to just first name ***/
         /*** distinct() will only provide unique values ***/
-        employees.stream().filter(e ->e.salary<5000 && e.city=="Delhi").map(e->e.fullName.split("\\ ")[0]).distinct().forEach(e-> System.out.println(e));
+        /*** Returning the list using collect() method ***/
+
+        List<String>employeeFirstName = employees.stream().filter(e ->e.salary<5000 && e.city=="Delhi").map(e->e.fullName.split("\\ ")[0]).distinct().collect(Collectors.toList());
+        System.out.println("\n" + "Printing the list of employees first name : ");
+        for(String i : employeeFirstName){
+            System.out.println(i);
+        }
     }
 }
