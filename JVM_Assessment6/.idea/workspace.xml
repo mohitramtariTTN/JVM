@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39ea3a35-2a0e-4a38-836b-ab0d81dad541" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/JVM_Assessment6.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FifthTopicDeadlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FifthTopicDeadlockSolve.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FirstTopic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FourthTopic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SecondTopic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ThirdTopic.java" afterDir="false" />
-    </list>
+    <list default="true" id="39ea3a35-2a0e-4a38-836b-ab0d81dad541" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +18,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -45,34 +31,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/home/mohit/BootCamp_Assessment/JVM_Assessment6"
   }
-}</component>
-  <component name="RunManager" selected="Application.FifthTopicDeadlock">
-    <configuration name="FifthTopicDeadlock" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FifthTopicDeadlock" />
-      <module name="JVM_Assessment6" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FifthTopicDeadlockSolve" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FifthTopicDeadlockSolve" />
-      <module name="JVM_Assessment6" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FourthTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FourthTopic" />
-      <module name="JVM_Assessment6" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}]]></component>
+  <component name="RunManager" selected="Application.SecondTopic">
     <configuration name="SecondTopic (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SecondTopic" />
       <module name="JVM_Assessment6" />
@@ -80,8 +46,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ThirdTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ThirdTopic" />
+    <configuration name="SecondTopic (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SecondTopic" />
+      <module name="JVM_Assessment6" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondTopic (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SecondTopic" />
+      <module name="JVM_Assessment6" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondTopic (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SecondTopic" />
+      <module name="JVM_Assessment6" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecondTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SecondTopic" />
       <module name="JVM_Assessment6" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -89,10 +76,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.FifthTopicDeadlock" />
-        <item itemvalue="Application.FifthTopicDeadlockSolve" />
-        <item itemvalue="Application.FourthTopic" />
-        <item itemvalue="Application.ThirdTopic" />
+        <item itemvalue="Application.SecondTopic" />
+        <item itemvalue="Application.SecondTopic (5)" />
+        <item itemvalue="Application.SecondTopic (4)" />
+        <item itemvalue="Application.SecondTopic (3)" />
         <item itemvalue="Application.SecondTopic (2)" />
       </list>
     </recent_temporary>

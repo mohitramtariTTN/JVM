@@ -6,6 +6,7 @@
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -37,7 +38,9 @@ class Task implements Runnable{
 
 /*** FixedThreadPool is used when you need to execute n number of tasks at a single time ***/
 class FixedThreadPool{
-    public static void execute() {
+    public static void execute() throws InterruptedException {
+        CountDownLatch latch = new CountDownLatch(5);
+
         Runnable r1 = new Task("Task 1");
         Runnable r2 = new Task("Task 2");
         Runnable r3 = new Task("Task 3");
@@ -51,6 +54,14 @@ class FixedThreadPool{
         pool.submit(r3);
         pool.submit(r4);
         pool.submit(r5);
+        latch.await();
+        try {
+            Thread.sleep(20000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Thread Execution is completed"+"\n");
 
         /**When shutdown method is called, it stops accepting new tasks, waits for previous tasks to
          * complete and then terminates the executor **/
@@ -63,7 +74,6 @@ class FixedThreadPool{
  */
 class CachedThreadPool{
     public static void execute(){
-
         Runnable r1 = new Task("Task 1");
         Runnable r2 = new Task("Task 2");
         Runnable r3 = new Task("Task 3");
@@ -79,7 +89,14 @@ class CachedThreadPool{
         executor.submit(r3);
         executor.submit(r4);
         executor.submit(r5);
-        System.out.println("No. of threads scheduled : "+pool.getTaskCount());
+
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Thread Execution is completed"+"\n");
         executor.shutdown();
 
     }
@@ -96,21 +113,32 @@ class SingleThreadExecutor{
 
         /*** A single thread pool can be obtained by calling newSingleThreadExecutor() method **/
         ExecutorService executor = Executors.newSingleThreadExecutor();
+
         executor.submit(r1);
         executor.submit(r2);
         executor.submit(r3);
         executor.submit(r4);
         executor.submit(r5);
+
+        try {
+            Thread.sleep(15000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Thread Execution is completed"+"\n");
     }
 }
 public class SecondTopic {
-    public static void main(String[] args) {
-         /** Please execute these methods one by one, instead of executing all at once.
-         * if executed all at once it can create confusion about which task if from which pool.**/
-
-//        FixedThreadPool.execute();
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Cached Thread Pool Started : ");
         CachedThreadPool.execute();
-//        SingleThreadExecutor.execute();
+
+        System.out.println("Fixed Thread Pool Started : ");
+        FixedThreadPool.execute();
+
+        System.out.println("Single Thread Pool Started : ");
+        SingleThreadExecutor.execute();
     }
 }
 
