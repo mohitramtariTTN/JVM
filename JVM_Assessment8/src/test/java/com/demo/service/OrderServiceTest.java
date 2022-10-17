@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-import static org.mockito.Mockito.times;
 
 public class OrderServiceTest {
 
@@ -19,16 +18,15 @@ public class OrderServiceTest {
 
     @Test
     public void testPlaceOrder1() {
-        // Setup
-        Order order = new Order(10, "Biscuit", 20.0);
-        orderServiceUnderTest = spy(OrderService.class);
+        //Setup
+        Order order = mock(Order.class);
+        OrderService orderServiceMock = mock(OrderService.class);
 
-        // Run the test
-        orderServiceUnderTest.placeOrder(order);
+        //Run the test
+        orderServiceMock.placeOrder(order);
 
-        // Verify the results
-        verify(orderServiceUnderTest,times(1)).placeOrder(order);
-
+        //Verify
+        verify(orderServiceMock).placeOrder(order);
     }
 
     @Test

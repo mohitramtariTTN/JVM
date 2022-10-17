@@ -16,24 +16,25 @@ public class EmailServiceTest {
         emailServiceUnderTest = new EmailService();
     }
 
-    @Test
+    @Test(expected = RuntimeException.class)
     public void testSendEmail1() {
-        // Setup
-        final Order order = new Order(0, "itemName", 0.0);
+        //Setup
+        final Order order = new Order(10, "Biscuit", 10.0);
 
-        emailServiceUnderTest = spy(EmailService.class);
+        EmailService emailServiceMock = mock(EmailService.class);
+        doThrow(new RuntimeException("Exception")).
+                when(emailServiceMock).sendEmail(any(Order.class));
 
-        // Run the test
-        emailServiceUnderTest.sendEmail(order);
+        verify(order,times(1)).isCustomerNotified();
 
-        // Verify the results
-        verify(emailServiceUnderTest,times(1)).sendEmail(order);
+        //Run the test
+        emailServiceMock.sendEmail(order);
     }
 
     @Test
     public void testSendEmail2() {
         // Setup
-        final Order order = new Order(0, "itemName", 0.0);
+        final Order order = new Order(20, "Bottle", 30.0);
 
         // Run the test
         final boolean result = emailServiceUnderTest.sendEmail(order, "cc");
